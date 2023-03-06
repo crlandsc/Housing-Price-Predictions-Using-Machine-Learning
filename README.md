@@ -1,9 +1,9 @@
 # Project 2 - Ames Housing Sale Predictions
 
 ## Problem Statement
-Zillow has recently hired a team of data scientists to improve it's methods of home price prediction. As a part of this team, we have been tasked with creating a machine learning model aimed at predicting the price of a home in Ames, Iowa at sale based on a publically available datset. The Ames dataset contains information from the Ames Assessor’s Office used in computing assessed values for individual residential properties sold in Ames, IA from 2006 to 2010.
+Zillow has recently hired a team of data scientists to improve its methods of home price prediction. As a part of this team, we have been tasked with creating a machine learning model aimed at predicting the price of a home in Ames, Iowa at sale based on a publically available dataset. The Ames dataset contains information from the Ames Assessor’s Office used in computing assessed values for individual residential properties sold in Ames, IA from 2006 to 2010.
 
-This will be a proof-of-conecept model geographically restricted to the city of Ames. Zillow would like to determine if it is worth allocating financial resources to this method of prediction in order to expand it to serve as Zillow's primary prediction engine for home sale prices accross the US.
+This will be a proof-of-concept model geographically restricted to the city of Ames. Zillow would like to determine if it is worth allocating financial resources to this method of prediction in order to expand it to serve as Zillow's primary prediction engine for home sale prices across the US.
 
 ## Background
 
@@ -13,13 +13,13 @@ The Real Estate market has been looking to improve the ways that it predicts hom
 <img src="https://media.tenor.com/SJQuPQYJoB0AAAAd/one-ring-lotr.gif" width="250"/>
 </div>
 
-In light of this, Zillow's goal is to be able to produce higher accuracy predictions that it's competitor (i.e. Trulia, Redfin, Realtor.com, etc.). Pre-submissions from each company are accepted until 11:59pm on 2/16/23. 70% of the Ames testing data will be used to produce a score to judge models for all pre-submissions. Once submissions close, the remaining 30% will be used to determine the final scores.
+In light of this, Zillow's goal is to be able to produce higher accuracy predictions than its competitors (i.e. Trulia, Redfin, Realtor.com, etc.). Pre-submissions from each company are accepted until 11:59 pm on 2/16/23. 70% of the Ames testing data will be used to produce a score to judge models for all pre-submissions. Once submissions close, the remaining 30% will be used to determine the final scores.
 
 All submitted models will be compared using the metric of Mean Squared Error (MSE). The lower the MSE score is, the better the model performed.
 
 $$MSE = \frac{1}{n}\sum (y_i - \hat{y}_i)^2$$
 
-To achieve Zillow's goals, our team will create utilize three types of linear regression models based on the Ames Housing Dataset that was provided to all companies for this Kaggle competition. These models will be Ordinary Least Squares, Ridge Regression, and LASSO Regression. The top two predictions of the best performing models will be submitted to Kaggle for review.
+To achieve Zillow's goals, our team will utilize three types of linear regression models based on the Ames Housing Dataset that was provided to all companies for this Kaggle competition. These models will be Ordinary Least Squares, Ridge Regression, and LASSO Regression. The top two predictions of the best performing models will be submitted to Kaggle for review.
 
 Because the purpose of this model is solely based on predicting home sale pricing, performance is prioritized over creating a "white-box" model. Zillow has instructed our team that understanding the internal components of the model is not as important as accurate predictions. Proof-of-concept success will be determined by producing an $R^2$ of above 0.90 on the provided data as well as an MSE below 30000 on Kaggle submission.
 
@@ -31,7 +31,7 @@ The entire data documentation provided by the Ames Assessor’s Office can be fo
 
 The data dictionary contains all features, provided and engineered, that were used in the models.
 - Dummy variables are grouped by their original variable name and denoted under *'Type'*.
-- Ordinal features that were converted to a numeric scale are also noted uner *'Type'*.
+- Ordinal features that were converted to a numeric scale are also noted under *'Type'*.
 - Polynomial Features are grouped by the pair of features that created them.
 
 
@@ -40,7 +40,7 @@ The data dictionary contains all features, provided and engineered, that were us
 |Feature|Type|Dataset|Description|
 |---|---|---|---|
 |**Id**|*Discrete*|Ames, IA Housing|ID number for each home|
-|**PID**|*Nominal*|Ames, IA Housing|Parcel identification number  - can be used with city web site for parcel review|
+|**PID**|*Nominal*|Ames, IA Housing|Parcel identification number  - can be used with city website for parcel review|
 |**MS SubClass**|*Nominal*|Ames, IA Housing|Identifies the type of dwelling involved in the sale|
 |**MS Zoning**|*Nominal (Dummy)*|Ames, IA Housing|Identifies the general zoning classification of the sale|
 |**Lot Frontage**|*Continuous*|Ames, IA Housing|Linear feet of street connected to property|
@@ -124,13 +124,13 @@ The data dictionary contains all features, provided and engineered, that were us
 |**Total Bath**|*Discrete*|Ames, IA Housing - Engineered|Total Bathrooms|
 |**Total Area**|*Continuous*|Ames, IA Housing - Engineered|Basement and above grade living area combined (square feet)|
 |**Outside Amenity Area**|*Continuous*|Ames, IA Housing - Engineered|All outside area combined (including all porches)|
-|**pf_overall**|*Continuous - Polynomial*|Ames, IA Housing|Polynomial features consisitng of ('Overall Qual','Gr Liv Area')|
-|**pf_garage**|*Continuous - Polynomial*|Ames, IA Housing|Polynomial features consisitng of ('Garage Area', 'Garage Cars')|
-|**pf_ext**|*Discrete - Polynomial*|Ames, IA Housing|Polynomial features consisitng of ('Exter Qual', 'Exter Cond')|
-|**pf_bsmt**|*Continuous - Polynomial*|Ames, IA Housing|Polynomial features consisitng of ('Bsmt Qual','Total Bsmt SF', 'Bsmt Cond', 'BsmtFin SF 1', 'Bsmt Exposure')|
-|**pf_fire**|*Discrete - Polynomial*|Ames, IA Housing|Polynomial features consisitng of ('Fireplaces', 'Fireplace Qu')|
-|**pf_mas**|*Continuous - Polynomial*|Ames, IA Housing|Polynomial features consisitng of ('Mas Vnr Area', 'Mas_Vnr_Stone')|
-|**pf_total_qual**|*Discrete - Polynomial*|Ames, IA Housing|Polynomial features consisitng of ('Overall Qual', 'Exter Qual', 'Kitchen Qual', 'Bsmt Qual', 'Heating QC')|
+|**pf_overall**|*Continuous - Polynomial*|Ames, IA Housing|Polynomial features consisting of ('Overall Qual','Gr Liv Area')|
+|**pf_garage**|*Continuous - Polynomial*|Ames, IA Housing|Polynomial features consisting of ('Garage Area', 'Garage Cars')|
+|**pf_ext**|*Discrete - Polynomial*|Ames, IA Housing|Polynomial features consisting of ('Exter Qual', 'Exter Cond')|
+|**pf_bsmt**|*Continuous - Polynomial*|Ames, IA Housing|Polynomial features consisting of ('Bsmt Qual', 'Total Bsmt SF', 'Bsmt Cond', 'BsmtFin SF 1', 'Bsmt Exposure')|
+|**pf_fire**|*Discrete - Polynomial*|Ames, IA Housing|Polynomial features consisting of ('Fireplaces', 'Fireplace Qu')|
+|**pf_mas**|*Continuous - Polynomial*|Ames, IA Housing|Polynomial features consisting of ('Mas Vnr Area', 'Mas_Vnr_Stone')|
+|**pf_total_qual**|*Discrete - Polynomial*|Ames, IA Housing|Polynomial features consisting of ('Overall Qual', 'Exter Qual', 'Kitchen Qual', 'Bsmt Qual', 'Heating QC')|
 
 ---
 
@@ -146,7 +146,7 @@ The data dictionary contains all features, provided and engineered, that were us
 #### Initial Observations:
 Some features stored as numbers should be categories:
 - Id: ID number
-- PID (Nominal): Parcel identification number  - can be used with city web site for parcel review.
+- PID (Nominal): Parcel identification number  - can be used with city website for parcel review.
     - More information: https://blog.realmanage.com/en-us/pid-pud-how-impact-community-association
 - MS SubClass (Nominal): Identifies the type of dwelling involved in the sale.
 - Year Built (Discrete): Original construction date
@@ -181,14 +181,14 @@ Features with Missing Values **(Bold = high number of NaNs)** *(italics = contai
 
 A majority of the features with missing values can be imputed as 'NA' for none.
 
-'Lot Frontage' and 'Mas Vnr Area' are the only two continuous variables with NaNs. These can be interpretted as 0s, as they correspond to not havnig any masonry and not having any streetfront.
+'Lot Frontage' and 'Mas Vnr Area' are the only two continuous variables with NaNs. These can be interpreted as 0s, as they correspond to not having any masonry and not having any street front.
 
 #### Data Cleaning Summary
 - Dropped data with mostly missing values.
   - Data with < 10% entries in datasets was dropped.
 - Imputed Missing Values.
   - According to the data documentation, all categorical features with NaNs are actually 'NA', which means 'none'.
-  - 'Lot Frontage' and 'Mas Vnr Area' are the only two continuous variables with NaNs. These can be interpretted as 0s, as they correspond to not havnig any masonry and not having any streetfront.
+  - 'Lot Frontage' and 'Mas Vnr Area' are the only two continuous variables with NaNs. These can be interpreted as 0s, as they correspond to not having any masonry and not having any street front.
 - Replaced 'NA' with 'None' for 'Mas Vnr Type'.
   - Additionally cleaned up 'CBlock' that does not appear in both sets of data.
 - Grouped Neighborhoods.
@@ -213,9 +213,9 @@ The distribution of the SalePrice is skewed right.
 <img src="images/Numeric Feature Correlation with SalePrice.png" width="800"/>
 </div>
 
-The Overall Quality rating is most closely correlated with the Sale Price. However, there are many other features that also exhibit strong correlation.
+The Overall Quality rating is most closely correlated with the Sale Price. However, there are many other features that also exhibit a strong correlation.
 
-All features with a correaltion of over 50% with Sale Price were individually plotted to identify outliers. Once outliers were determined, they were dropped and the resulting correlation plots are shown below.
+All features with a correlation of over 50% with Sale Price were individually plotted to identify outliers. Once outliers were determined, they were dropped and the resulting correlation plots are shown below.
 
 ### Features With >0.5 Correlation to Sale Price
 <div align="center">
@@ -226,14 +226,14 @@ All features with a correaltion of over 50% with Sale Price were individually pl
 <img src="images/Top 7-11 Correlation Features.png" width="1000"/>
 </div>
 
-These features show reasonably clear correlation to Sale price that can be generalized with a linear model. However, due to the variations of spread in the data, new features were engineered from these features to creat higher correlations to Sale Price.
+These features show a reasonably clear correlation to Sale price that can be generalized with a linear model. However, due to the variations of spread in the data, new features were engineered from these features to create higher correlations to Sale Price.
 
 ---
 
 ## Feature Engineering
 
 #### Dummy Features
-To analyze categorical features that do not correlate to any ranking scale (nominal features), dummy features were created. Some features were excluded becasue there was not sufficient diversity amongst its values. The following dummy features were included in the model:
+To analyze categorical features that do not correlate to any ranking scale (nominal features), dummy features were created. Some features were excluded because there was not sufficient diversity amongst its values. The following dummy features were included in the model:
 - MS Zoning
 - Lot Shape
 - Land Contour
@@ -251,7 +251,7 @@ To analyze categorical features that do not correlate to any ranking scale (nomi
 - Garage Type
 
 #### Ordinal Features
-Some categorical feature, however, do map to a ranking scale (ordinal features). These features were converted to a numeric format on scales ranging from 0 to 6 for analyis. Some features were excluded becasue there was not sufficient diversity amongst its values. The following ordinal features were included in the model:
+Some categorical features, however, do map to a ranking scale (ordinal features). These features were converted to a numeric format on scales ranging from 0 to 6 for analysis. Some features were excluded because there was not sufficient diversity amongst its values. The following ordinal features were included in the model:
 - Exter Qual
 - Exter Cond
 - Bsmt Qual
@@ -274,17 +274,17 @@ A new feature called 'Total Bath' was engineered to include all bathrooms. bathr
   - 0.5 per half bathroom
 
 ##### Total Area
-A new feature called 'Total Area' was engineered to account for the total suare footage of the home. This includes basement and above ground area.
+A new feature called 'Total Area' was engineered to account for the total square footage of the home. This includes basement and above ground area.
 
 ##### Total Outside Amenity Area
 A new feature called 'Outside Amenity Area' was engineered to account for all outdoor amenity spaces. This included all types of porches as well.
 
 #### Polynomial Features
-Polynomial features were created to explore interactions between different features. The follow polynomial features were created:
+Polynomial features were created to explore interactions between different features. The following polynomial features were created:
 1. Overall quality vs total square footage
 1. Garage area vs how many cars fit within the garage
 1. Exterior quality vs exterior condition
-1. Basement features - baement quality, total basement area, basement condition, basement finish, basement exposure
+1. Basement features - basement quality, total basement area, basement condition, basement finish, basement exposure
 1. Number of fireplaces vs fireplace quality
 1. Masony area vs if the masonry is stone
 1. Year built vs remodeled
@@ -317,26 +317,25 @@ The residuals for each model are shown below.
 <img src="images/LASSO Residuals.png" width="600"/>
 </div>
 
-All three residual plots demonstrate a random pattern, which supports the assumption of linear model. Additionally, the residual plots demonstrate homoscedasticity as the variance remains consistent across all prediction values.
+All three residual plots demonstrate a random pattern, which supports the assumption of a linear model. Additionally, the residual plots demonstrate homoscedasticity as the variance remains consistent across all prediction values.
 
 ## Conclusions & Recommendations
 
 ### Conclusion
 Our team of data scientists analyzed the Ames, IA housing dataset to determine if the data provided meaningful information about the Sale Price of each home.
 
-We initially cleaned the data to account for abnormalizites and problems. We then performed EDA on the dataset to discover meaningful correlations between features. Then we engineered features via several methods including, creating dummies, mapping ordinal categories to numbers, creating new features based upon similar features, and creating polynomial features to determine reactions between features. All features were then sacled to prepare them for modeling and regularization.
+We initially cleaned the data to account for abnormalities and problems. We then performed EDA on the dataset to discover meaningful correlations between features. Then we engineered features via several methods including, creating dummies, mapping ordinal categories to numbers, creating new features based upon similar features, and creating polynomial features to determine reactions between features. All features were then scaled to prepare them for modeling and regularization.
 
 All of these engineered features were then tested on three linear regression models:
 - Ordinary Least Squares (OLS)
 - Ridge Regression (l2 penalty)
-- LASSO Regresion (l1 penalty)
+- LASSO Regression (l1 penalty)
 
 From these models, it was determined that the Ridge and LASSO models performed best based on their $R^2$ and MSE scores. Both the Ridge and LASSO models utilized 10-fold cross-validation to improve their performance. The Ordinary Least Squares model outperformed the other two models on the training data, but worse on the test data. This is because the model was overfit. Because the Ridge and LASSO models utilize penalties, they can regularize the data to create more robust models that generalize better to new data.
 
-We have concluded that utilizing any of the three linear regression models with this data set can produce accurate predictions above the $R^2$ of 0.90 and < 30000 MSE threshold that Zillow had provided.
+We have concluded that utilizing any of the three linear regression models with this data set can produce accurate predictions above the $R^2$ of 0.90 and < 30000 MSE threshold that Zillow provided.
 
 ### Recommendations
-Based on our achievement of the sucess metrics and conclusions, we recommend that Zillow allocate more funding to further develop this home sale price prediction technology. Resources should be distributed to collecting larger and better data sets as well as continuing to refine and improve the current proof-of-concept models.
+Based on our achievement of the success metrics and conclusions, we recommend that Zillow allocate more funding to further develop this home sale price prediction technology. Resources should be distributed to collect larger and better data sets as well as continue to refine and improve the current proof-of-concept models.
 
-We also recommend that if Zillow chooses to utilize models to predict the effect of certain aspects of a home on sale price rather than simply utilizing all information to predict the sale price, that the complexity of the model be reduced through removing variables that exhibit multicollinearity. This would likely reduce the overall performance of the model, but would provide more clarity to how individual features affect sale price.
-
+We also recommend that if Zillow chooses to utilize models to predict the effect of certain aspects of a home on sale price rather than simply utilizing all information to predict the sale price, the complexity of the model be reduced by removing variables that exhibit multicollinearity. This would likely reduce the overall performance of the model, but would provide more clarity to how individual features affect sale price.
