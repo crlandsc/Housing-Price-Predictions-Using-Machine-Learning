@@ -1,4 +1,4 @@
-# Project 2 - Ames Housing Sale Predictions
+# Housing Price Predictions Using Machine Learning
 
 ## Problem Statement
 Zillow has recently hired a team of data scientists to improve its methods of home price prediction. As a part of this team, we have been tasked with creating a machine learning model aimed at predicting the price of a home in Ames, Iowa at sale based on a publically available dataset. The Ames dataset contains information from the Ames Assessor’s Office used in computing assessed values for individual residential properties sold in Ames, IA from 2006 to 2010.
