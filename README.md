@@ -1,4 +1,22 @@
-# Housing Price Predictions Using Machine Learning
+<div align="center">
+    <img src="./images/CL Banner.png"/>
+</div>
+
+<h1 style="text-align:center">
+Housing Price Predictions Using Machine Learning
+</h1>
+
+##### Contents:
+- [Problem Statement](#problem-statement)
+- [Background](#background)
+- [Datasets](#datasets)
+- [Data Dictionary](#data-dictionary)
+- [Data Cleaning](#data-cleaning)
+- [Exploratory Data Analysis (EDA)](#exploratory-data-analysis)
+- [Feature Engineering](#feature-engineering)
+- [Model Tuning](#model-tuning)
+- [Conclusions](#conclusions)
+- [Recommendations](#recommendations)
 
 ## Problem Statement
 Zillow has recently hired a team of data scientists to improve its methods of home price prediction. As a part of this team, we have been tasked with creating a machine learning model aimed at predicting the price of a home in Ames, Iowa at sale based on a publically available dataset. The Ames dataset contains information from the Ames Assessor’s Office used in computing assessed values for individual residential properties sold in Ames, IA from 2006 to 2010.
@@ -134,7 +152,7 @@ The data dictionary contains all features, provided and engineered, that were us
 
 ---
 
-## Data Cleaning Process
+## Data Cleaning
 ##### Raw data summary:
 - Train dataset has 2051 entries with 81 features (includes SalePrice)
 - Test dataset has 878 entries with 80 features (excludes SalePrice)
@@ -200,7 +218,7 @@ A majority of the features with missing values can be imputed as 'NA' for none.
 
 ---
 
-## EDA
+## Exploratory Data Analysis
 ### Target Feature - Sale Price
 <div align="center">
 <img src="images/SalePrice Distribution.png" width="700"/>
@@ -321,7 +339,7 @@ All three residual plots demonstrate a random pattern, which supports the assump
 
 ## Conclusions & Recommendations
 
-### Conclusion
+### Conclusions
 Our team of data scientists analyzed the Ames, IA housing dataset to determine if the data provided meaningful information about the Sale Price of each home.
 
 We initially cleaned the data to account for abnormalities and problems. We then performed EDA on the dataset to discover meaningful correlations between features. Then we engineered features via several methods including, creating dummies, mapping ordinal categories to numbers, creating new features based upon similar features, and creating polynomial features to determine reactions between features. All features were then scaled to prepare them for modeling and regularization.
